@@ -3,6 +3,13 @@ import CredentialsProvider from "next-auth/providers/credentials";
 
 export const options: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    signIn: "/signin",
+    // signOut: "/signout",
+    // error: '/auth/error', // Error code passed in query string as ?error=
+    // verifyRequest: '/auth/verify-request', // (used for check email message)
+    // newUser: '/auth/new-user' // New users will be directed here on first sign in (leave the property out if not of interest)
+  },
   providers: [
     CredentialsProvider({
       name: "Credentials",
