@@ -36,7 +36,8 @@ export const options: NextAuthOptions = {
           // role: "manager",
           role: "admin",
         };
-
+        console.log(credentials?.username);
+        console.log(credentials?.password);
         if (
           credentials?.username === user.name &&
           credentials?.password === user.password
