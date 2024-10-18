@@ -3,7 +3,6 @@
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import SignInForm from "@/app/components/SignInForm";
 import { getServerSession } from "next-auth";
-import Link from "next/link";
 
 export default async function SignInPage() {
   const session = await getServerSession(options);
@@ -24,7 +23,6 @@ export default async function SignInPage() {
               create a new account.
             </Link> */}
           </p>
-          [form]
         </div>
       )}
     </div>
