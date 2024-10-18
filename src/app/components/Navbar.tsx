@@ -1,6 +1,7 @@
 import Link from "next/link";
+import PermissionCheck from "./PermissionCheck";
 
-export default function Navbar() {
+export default async function Navbar() {
   return (
     <nav className="bg-blue-800 p-4">
       <ul className="flex justify-evenly text-2xl font-bold">
@@ -19,9 +20,11 @@ export default function Navbar() {
         <li>
           <Link href="/client">Client</Link>
         </li>
-        <li>
-          <Link href="/extra">Extra</Link>
-        </li>
+        <PermissionCheck permission={["admin"]}>
+          <li>
+            <Link href="/extra">Extra</Link>
+          </li>
+        </PermissionCheck>
       </ul>
     </nav>
   );
