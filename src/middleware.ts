@@ -12,7 +12,8 @@ export default withAuth(
       request.nextUrl.pathname.startsWith("/extra") &&
       request.nextauth.token?.role !== "admin"
     ) {
-      return NextResponse.rewrite(new URL("/denied", request.url));
+      // return NextResponse.rewrite(new URL("/denied", request.url));
+      return NextResponse.rewrite(new URL("/signin", request.url));
     }
 
     if (
@@ -20,7 +21,8 @@ export default withAuth(
       request.nextauth.token?.role !== "admin" &&
       request.nextauth.token?.role !== "manager"
     ) {
-      return NextResponse.rewrite(new URL("/denied", request.url));
+      // return NextResponse.rewrite(new URL("/denied", request.url));
+      return NextResponse.rewrite(new URL("/signin", request.url));
     }
   },
   {
